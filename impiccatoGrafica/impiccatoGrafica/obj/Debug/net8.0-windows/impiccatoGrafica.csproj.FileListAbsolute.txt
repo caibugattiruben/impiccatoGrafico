@@ -1,0 +1,16 @@
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\bin\Debug\net8.0-windows\impiccatoGrafica.exe
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\bin\Debug\net8.0-windows\impiccatoGrafica.deps.json
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\bin\Debug\net8.0-windows\impiccatoGrafica.runtimeconfig.json
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\bin\Debug\net8.0-windows\impiccatoGrafica.dll
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\bin\Debug\net8.0-windows\impiccatoGrafica.pdb
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.Form1.resources
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.csproj.GenerateResource.cache
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.AssemblyInfoInputs.cache
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.AssemblyInfo.cs
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.csproj.CoreCompileInputs.cache
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.dll
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\refint\impiccatoGrafica.dll
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.pdb
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.genruntimeconfig.cache
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\ref\impiccatoGrafica.dll
