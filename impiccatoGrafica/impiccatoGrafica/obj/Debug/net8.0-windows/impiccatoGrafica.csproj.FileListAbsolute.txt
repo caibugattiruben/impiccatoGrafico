@@ -14,3 +14,4 @@ C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGra
 C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.pdb
 C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.genruntimeconfig.cache
 C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\ref\impiccatoGrafica.dll
+C:\Users\caibugatti.ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.sourcelink.json
