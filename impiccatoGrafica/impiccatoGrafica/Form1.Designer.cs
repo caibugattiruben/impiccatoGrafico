@@ -52,6 +52,8 @@
             label6 = new Label();
             lblu = new Label();
             parolaP = new Label();
+            lblINDIZI = new Label();
+            lblIndizio = new Label();
             SuspendLayout();
             // 
             // btnI
@@ -263,17 +265,36 @@
             // parolaP
             // 
             parolaP.AutoSize = true;
-            parolaP.Location = new Point(489, 428);
+            parolaP.Location = new Point(502, 177);
             parolaP.Name = "parolaP";
             parolaP.Size = new Size(47, 15);
             parolaP.TabIndex = 26;
             parolaP.Text = "parolaP";
+            // 
+            // lblINDIZI
+            // 
+            lblINDIZI.AutoSize = true;
+            lblINDIZI.Location = new Point(462, 369);
+            lblINDIZI.Name = "lblINDIZI";
+            lblINDIZI.Size = new Size(52, 15);
+            lblINDIZI.TabIndex = 28;
+            lblINDIZI.Text = "INDIZIO:";
+            // 
+            // lblIndizio
+            // 
+            lblIndizio.AutoSize = true;
+            lblIndizio.Location = new Point(511, 369);
+            lblIndizio.Name = "lblIndizio";
+            lblIndizio.Size = new Size(0, 15);
+            lblIndizio.TabIndex = 29;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1136, 650);
+            Controls.Add(lblIndizio);
+            Controls.Add(lblINDIZI);
             Controls.Add(parolaP);
             Controls.Add(lblu);
             Controls.Add(label6);
@@ -330,5 +351,7 @@
         private Label label6;
         private Label lblu;
         private Label parolaP;
+        private Label lblINDIZI;
+        private Label lblIndizio;
     }
 }
