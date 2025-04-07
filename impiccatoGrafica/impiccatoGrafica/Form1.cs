@@ -91,7 +91,6 @@ namespace impiccatoGrafica
             label1.Visible = false;
             cboxD.Visible = false;
             btns.Visible = false;
-            cboxD.
 
         }
 
@@ -108,16 +107,7 @@ namespace impiccatoGrafica
 
         private void btnI_Click(object sender, EventArgs e)
         {
-            if (indovinato == true)
-            {
-                cboxT.Visible = true;
-                label3.Visible = true;
-                btng.Visible = true;
-                label1.Visible = true;
-                cboxD.Visible = true;
-                btns.Visible = true;
-                indovinato = false;
-            }
+
             switch (azione)
             {
                 case "dire una lettera":
@@ -144,6 +134,7 @@ namespace impiccatoGrafica
                         {
                             lblc.Text = "LA PAROLA NON CONTIENE LA LETTERA";
                             lblu.Text += lettera + ", ";
+                            lblv.Text = (int.Parse(lblv.Text) - 1).ToString();
                         }
                     }
                     break;
@@ -192,12 +183,19 @@ namespace impiccatoGrafica
                                 parolaTrasf[i] = parola[i];
                             }
                             lblP.Text = new string(parolaTrasf);
+                            if(lblPindov.Text.Length == 0)
+                            {
+                                lblPindov.Text = parola;
+                            }
+                            else
+                            {
+                                lblPindov.Text += ", " + parola;
+                            }
                         }
                         else
                         {
                             lblc.Text = "NON HAI INDOVINATO LA PAROLA";
-                            int v = int.Parse(lblv.Text) - 1;
-                            lblv.Text = v.ToString();
+                            lblv.Text = (int.Parse(lblv.Text) - 1).ToString();
                         }
                     }
                     else if (parola1.Length > parola.Length)
@@ -212,10 +210,27 @@ namespace impiccatoGrafica
                     break;
 
             }
-            if (!new string(parolaTrasf).Contains('_'))
+            int vita = int.Parse(lblv.Text);
+            if (!new string(parolaTrasf).Contains('_') || vita <= 0)
             {
-                indovinato = true;
+                foreach (Control ctrl in this.Controls)
+                {
+                    ctrl.Visible = false;
+                }
+
+
+                lblc.Visible = true;
+                btnr.Visible = true;
+                if (vita <= 0)
+                {
+                    lblc.Text = "Non hai indovinato la parola!!!";
+                }
+                else
+                {
+                    lblc.Text = "Hai indovinato la parola!!!";
+                }
             }
+
 
 
         }
@@ -223,6 +238,32 @@ namespace impiccatoGrafica
         private void btnChiudi_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnr_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    ((TextBox)ctrl).Clear();
+                }
+                else if (ctrl is ComboBox)
+                {
+                    ((ComboBox)ctrl).SelectedIndex = -1;
+                }
+                else if (ctrl is ListBox)
+                {
+                    ((ListBox)ctrl).ClearSelected();
+                }
+                else if (ctrl is Label)
+                {
+                    ((Label)ctrl).Text = "";
+                }
+                ctrl.Visible = true;
+            }
+            btnr.Visible = false;
+            lblc.Text = "";
         }
 
        

@@ -54,6 +54,9 @@
             parolaP = new Label();
             lblINDIZI = new Label();
             lblIndizio = new Label();
+            btnr = new Button();
+            label8 = new Label();
+            lblPindov = new Label();
             SuspendLayout();
             // 
             // btnI
@@ -105,7 +108,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(907, 111);
             label3.Name = "label3";
-            label3.Size = new Size(38, 15);
+            label3.Size = new Size(39, 15);
             label3.TabIndex = 6;
             label3.Text = "Tema:";
             // 
@@ -274,7 +277,7 @@
             // lblINDIZI
             // 
             lblINDIZI.AutoSize = true;
-            lblINDIZI.Location = new Point(462, 369);
+            lblINDIZI.Location = new Point(459, 389);
             lblINDIZI.Name = "lblINDIZI";
             lblINDIZI.Size = new Size(52, 15);
             lblINDIZI.TabIndex = 28;
@@ -288,11 +291,42 @@
             lblIndizio.Size = new Size(0, 15);
             lblIndizio.TabIndex = 29;
             // 
+            // btnr
+            // 
+            btnr.Location = new Point(502, 318);
+            btnr.Name = "btnr";
+            btnr.Size = new Size(137, 58);
+            btnr.TabIndex = 30;
+            btnr.Text = "Riavvia";
+            btnr.UseVisualStyleBackColor = true;
+            btnr.Visible = false;
+            btnr.Click += btnr_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(844, 293);
+            label8.Name = "label8";
+            label8.Size = new Size(102, 15);
+            label8.TabIndex = 31;
+            label8.Text = "Parole indovinate:";
+            // 
+            // lblPindov
+            // 
+            lblPindov.AutoSize = true;
+            lblPindov.Location = new Point(844, 310);
+            lblPindov.Name = "lblPindov";
+            lblPindov.Size = new Size(0, 15);
+            lblPindov.TabIndex = 32;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1136, 650);
+            Controls.Add(lblPindov);
+            Controls.Add(label8);
+            Controls.Add(btnr);
             Controls.Add(lblIndizio);
             Controls.Add(lblINDIZI);
             Controls.Add(parolaP);
@@ -339,7 +373,6 @@
         private Label label1;
         private Label label5;
         private Label lblm;
-        private Label label7;
         private Label lblv;
         private Label prova;
         private ComboBox cboxT;
@@ -353,5 +386,9 @@
         private Label parolaP;
         private Label lblINDIZI;
         private Label lblIndizio;
+        private Button btnr;
+        private Label label7;
+        private Label label8;
+        private Label lblPindov;
     }
 }
