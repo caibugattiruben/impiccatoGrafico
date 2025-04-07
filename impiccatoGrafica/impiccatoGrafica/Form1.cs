@@ -9,10 +9,12 @@ namespace impiccatoGrafica
         string parola, tema, azione;
         char[] parolaTrasf;
         Random rdn = new Random();
-        bool chiudere = false;
+        bool chiudere = false, indovinato = false;
         int jolly = 1;
+
         private void btng_Click(object sender, EventArgs e)
         {
+
             string[,] matrice = new string[7, 50];
             string path = "Nomi.txt", riga = "";
             string[] parole = new string[50];
@@ -89,6 +91,7 @@ namespace impiccatoGrafica
             label1.Visible = false;
             cboxD.Visible = false;
             btns.Visible = false;
+            cboxD.
 
         }
 
@@ -105,6 +108,16 @@ namespace impiccatoGrafica
 
         private void btnI_Click(object sender, EventArgs e)
         {
+            if (indovinato == true)
+            {
+                cboxT.Visible = true;
+                label3.Visible = true;
+                btng.Visible = true;
+                label1.Visible = true;
+                cboxD.Visible = true;
+                btns.Visible = true;
+                indovinato = false;
+            }
             switch (azione)
             {
                 case "dire una lettera":
@@ -135,9 +148,9 @@ namespace impiccatoGrafica
                     }
                     break;
                 case "dire un indizio":
-                    
-                    int n = rdn.Next(1,4);
-                    
+
+                    int n = rdn.Next(1, 4);
+
                     break;
                 case "lettera jolly":
                     if (jolly == 1)
@@ -157,31 +170,33 @@ namespace impiccatoGrafica
                             }
 
                         }
+                        lblP.Text = new string(parolaTrasf);
+                        jolly = 0;
                     }
                     else
                     {
                         lblc.Text = "NON HAI LETTERE JOLLY A DISPOSIZIONE";
                     }
 
-                        break;
+                    break;
                 case "indovina la parola":
                     lblc.Text = "Indovina la parola:";
-                    string parola1=tbox1.Text.ToString().ToLower();
+                    string parola1 = tbox1.Text.ToString().ToLower();
                     if (parola1.Length == parola.Length)
                     {
                         if (parola1 == parola)
                         {
                             lblc.Text = "HAI INDOVINATO LA PAROLA";
-                            for(int i = 0; i < parolaTrasf.Length; i++)
+                            for (int i = 0; i < parolaTrasf.Length; i++)
                             {
-                                parolaTrasf [i] = parola[i];
+                                parolaTrasf[i] = parola[i];
                             }
                             lblP.Text = new string(parolaTrasf);
                         }
                         else
                         {
                             lblc.Text = "NON HAI INDOVINATO LA PAROLA";
-                            int v=int.Parse(lblv.Text)-1;
+                            int v = int.Parse(lblv.Text) - 1;
                             lblv.Text = v.ToString();
                         }
                     }
@@ -193,9 +208,16 @@ namespace impiccatoGrafica
                     {
                         lblc.Text = "LA PAROLA E' TROPPO CORTA";
                     }
-                    
+
                     break;
+
             }
+            if (!new string(parolaTrasf).Contains('_'))
+            {
+                indovinato = true;
+            }
+
+
         }
 
         private void btnChiudi_Click(object sender, EventArgs e)
