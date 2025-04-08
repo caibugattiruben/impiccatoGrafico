@@ -32,3 +32,4 @@ C:\Users\Ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\bin\De
 C:\Users\Ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\bin\Debug\net8.0-windows\impiccatoGrafica.pdb
 C:\Users\Ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.genruntimeconfig.cache
 C:\Users\Ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\ref\impiccatoGrafica.dll
+C:\Users\Ruben\Desktop\impiccatoGrafico\impiccatoGrafica\impiccatoGrafica\obj\Debug\net8.0-windows\impiccatoGrafica.Properties.Resources.resources
