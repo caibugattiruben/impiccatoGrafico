@@ -57,6 +57,9 @@
             btnr = new Button();
             label8 = new Label();
             lblPindov = new Label();
+            listBox1 = new ListBox();
+            btnIndizio = new Button();
+            btnjolly = new Button();
             SuspendLayout();
             // 
             // btnI
@@ -78,7 +81,7 @@
             // 
             // btng
             // 
-            btng.Location = new Point(907, 154);
+            btng.Location = new Point(626, 114);
             btng.Name = "btng";
             btng.Size = new Size(126, 23);
             btng.TabIndex = 2;
@@ -106,9 +109,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(907, 111);
+            label3.Location = new Point(626, 71);
             label3.Name = "label3";
-            label3.Size = new Size(39, 15);
+            label3.Size = new Size(38, 15);
             label3.TabIndex = 6;
             label3.Text = "Tema:";
             // 
@@ -133,7 +136,7 @@
             // 
             // btns
             // 
-            btns.Location = new Point(12, 132);
+            btns.Location = new Point(76, 310);
             btns.Name = "btns";
             btns.Size = new Size(75, 23);
             btns.TabIndex = 10;
@@ -144,7 +147,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 89);
+            label1.Location = new Point(76, 267);
             label1.Name = "label1";
             label1.Size = new Size(55, 15);
             label1.TabIndex = 11;
@@ -170,7 +173,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(192, 111);
+            label7.Location = new Point(19, 153);
             label7.Name = "label7";
             label7.Size = new Size(27, 15);
             label7.TabIndex = 15;
@@ -179,7 +182,7 @@
             // lblv
             // 
             lblv.AutoSize = true;
-            lblv.Location = new Point(257, 107);
+            lblv.Location = new Point(84, 149);
             lblv.Name = "lblv";
             lblv.Size = new Size(0, 15);
             lblv.TabIndex = 16;
@@ -197,7 +200,7 @@
             // 
             cboxT.FormattingEnabled = true;
             cboxT.Items.AddRange(new object[] { "Niente", "Calcio", "Verbi", "Frutta e verdura", "Animali", "Nazioni", "Lavori", "Città" });
-            cboxT.Location = new Point(907, 129);
+            cboxT.Location = new Point(626, 89);
             cboxT.Name = "cboxT";
             cboxT.Size = new Size(121, 23);
             cboxT.TabIndex = 18;
@@ -205,7 +208,7 @@
             // cboxa
             // 
             cboxa.FormattingEnabled = true;
-            cboxa.Items.AddRange(new object[] { "Dire una lettera", "Indizio", "Lettera Jolly", "Indovina la parola" });
+            cboxa.Items.AddRange(new object[] { "Dire una lettera", "Lettera Jolly", "Indizio", "Indovina la parola" });
             cboxa.Location = new Point(283, 273);
             cboxa.Name = "cboxa";
             cboxa.Size = new Size(121, 23);
@@ -215,14 +218,14 @@
             // 
             cboxD.FormattingEnabled = true;
             cboxD.Items.AddRange(new object[] { "Facile", "Medio", "Difficile", "Impossibile" });
-            cboxD.Location = new Point(12, 107);
+            cboxD.Location = new Point(76, 285);
             cboxD.Name = "cboxD";
             cboxD.Size = new Size(121, 23);
             cboxD.TabIndex = 20;
             // 
             // btnChiudi
             // 
-            btnChiudi.Location = new Point(984, 533);
+            btnChiudi.Location = new Point(1025, 29);
             btnChiudi.Name = "btnChiudi";
             btnChiudi.Size = new Size(75, 43);
             btnChiudi.TabIndex = 21;
@@ -251,7 +254,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(909, 217);
+            label6.Location = new Point(844, 250);
             label6.Name = "label6";
             label6.Size = new Size(77, 15);
             label6.TabIndex = 24;
@@ -260,7 +263,7 @@
             // lblu
             // 
             lblu.AutoSize = true;
-            lblu.Location = new Point(915, 238);
+            lblu.Location = new Point(936, 250);
             lblu.Name = "lblu";
             lblu.Size = new Size(0, 15);
             lblu.TabIndex = 25;
@@ -268,7 +271,7 @@
             // parolaP
             // 
             parolaP.AutoSize = true;
-            parolaP.Location = new Point(502, 177);
+            parolaP.Location = new Point(495, 177);
             parolaP.Name = "parolaP";
             parolaP.Size = new Size(47, 15);
             parolaP.TabIndex = 26;
@@ -277,7 +280,7 @@
             // lblINDIZI
             // 
             lblINDIZI.AutoSize = true;
-            lblINDIZI.Location = new Point(459, 389);
+            lblINDIZI.Location = new Point(18, 439);
             lblINDIZI.Name = "lblINDIZI";
             lblINDIZI.Size = new Size(52, 15);
             lblINDIZI.TabIndex = 28;
@@ -297,7 +300,7 @@
             btnr.Name = "btnr";
             btnr.Size = new Size(137, 58);
             btnr.TabIndex = 30;
-            btnr.Text = "Riavvia";
+            btnr.Text = "Continua";
             btnr.UseVisualStyleBackColor = true;
             btnr.Visible = false;
             btnr.Click += btnr_Click;
@@ -319,11 +322,44 @@
             lblPindov.Size = new Size(0, 15);
             lblPindov.TabIndex = 32;
             // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Items.AddRange(new object[] { "Prima Lettera (10 monete)", "Ultima Lettera (5 monete)", "Tema della parola (15 monete)", "Prima e ultima lettera (15 monete)", "Descrizione parola (25 monete)" });
+            listBox1.Location = new Point(76, 439);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(191, 79);
+            listBox1.TabIndex = 33;
+            // 
+            // btnIndizio
+            // 
+            btnIndizio.Location = new Point(126, 524);
+            btnIndizio.Name = "btnIndizio";
+            btnIndizio.Size = new Size(101, 34);
+            btnIndizio.TabIndex = 34;
+            btnIndizio.Text = "SCEGLI INDIZIO";
+            btnIndizio.UseVisualStyleBackColor = true;
+            // 
+            // btnjolly
+            // 
+            btnjolly.Location = new Point(672, 336);
+            btnjolly.Name = "btnjolly";
+            btnjolly.Size = new Size(109, 40);
+            btnjolly.TabIndex = 35;
+            btnjolly.Text = "LETTERA JOLLY";
+            btnjolly.UseVisualStyleBackColor = true;
+            btnjolly.Click += btnjolly_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 255, 192);
             ClientSize = new Size(1136, 650);
+            Controls.Add(btnjolly);
+            Controls.Add(btnIndizio);
+            Controls.Add(listBox1);
             Controls.Add(lblPindov);
             Controls.Add(label8);
             Controls.Add(btnr);
@@ -390,5 +426,8 @@
         private Label label7;
         private Label label8;
         private Label lblPindov;
+        private ListBox listBox1;
+        private Button btnIndizio;
+        private Button btnjolly;
     }
 }
