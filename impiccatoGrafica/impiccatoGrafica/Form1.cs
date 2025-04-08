@@ -64,7 +64,19 @@ namespace impiccatoGrafica
             }
 
             lblP.Text = new string(parolaTrasf);
-            
+            foreach (Control elementi in this.Controls)
+            {
+                elementi.Visible = true;
+            }
+
+            label1.Visible = false;
+            cboxD.Visible = false;
+            btns.Visible = false;
+            cboxT.Visible = false;
+            label3.Visible = false;
+            btng.Visible = false;
+            btnr.Visible = false;
+
         }
         private void btns_Click(object sender, EventArgs e)
         {
@@ -88,7 +100,12 @@ namespace impiccatoGrafica
                     lblv.Text = "1";
                     break;
             }
-            
+            label1.Visible = false;
+            cboxD.Visible = false;
+            btns.Visible = false;
+            cboxT.Visible = true;
+            label3.Visible = true;
+            btng.Visible = true;
 
         }
 
@@ -97,105 +114,59 @@ namespace impiccatoGrafica
             tbox1.Text = "";
         }
 
-        private void btnAz_Click(object sender, EventArgs e)
-        {
-            azione = cboxa.SelectedItem.ToString().ToLower();
-            
-           
-        }
+
 
         private void btnI_Click(object sender, EventArgs e)
         {
-
-            switch (azione)
+            string lettera = tbox1.Text.ToString().ToLower();
+            tbox1.Text = "";
+            //LETTERA OK
+            if (lettera.Length == 1)
             {
-                case "dire una lettera":
-                    string lettera = tbox1.Text.ToString().ToLower();
-                    if (lettera.Length > 1)
+                if (parola.Contains(lettera))
+                {
+                    lblc.Text = "LA PAROLA CONTIENE LA LETTERA";
+                    for(int i = 0; i < parola.Length; i++)
                     {
-                        lblc.Text = "NON E' UNA LETTERA SINGOLA SE VUOI PROVARE LA PAROLA SELEZIONA INDOVINA LA PAROLA";
-                    }
-                    else
-                    {
-                        if (parola.Contains(lettera))
+                        if (lettera[0] == parola[i])
                         {
-                            lblc.Text = "LA PAROLA CONTIENE LA LETTERA";
-                            for (int i = 0; i < parolaTrasf.Length; i++)
-                            {
-                                if (lettera[0] == parola[i])
-                                {
-                                    parolaTrasf[i] = lettera[0];
-                                }
-                            }
-                            lblP.Text = new string(parolaTrasf);
+                            parolaTrasf[i] = parola[i];
                         }
-                        else
-                        {
-                            lblc.Text = "LA PAROLA NON CONTIENE LA LETTERA";
-                            lblu.Text += lettera + ", ";
-                            lblv.Text = (int.Parse(lblv.Text) - 1).ToString();
-
-                        }
-                        label4.Visible = false;
-                        tbox1.Visible = false;
-                        btnI.Visible = false;
-                        btnCanc.Visible = false;
-                        cboxa.SelectedItem = null;
-                        label2.Visible = true;
-                        cboxa.Visible = true;
-                        btnAz.Visible = true;
-                        tbox1.Clear();
-
                     }
-                    break;
-                
-                case "indovina la parola":
-                    lblc.Text = "Indovina la parola:";
-                    string parola1 = tbox1.Text.ToString().ToLower();
-                    if (parola1.Length == parola.Length)
+                }
+                else
+                {
+                    lblc.Text = "LA PAROLA NON CONTIENE LA LETTERA";
+                    lblv.Text = (int.Parse(lblv.Text) - 1).ToString();
+                }
+                lblP.Text = new string(parolaTrasf);
+                if (lblu.Text.Length == 0)
+                {
+                    lblu.Text = lettera;
+                }
+                else
+                {
+                    lblu.Text += ", "+lettera;
+                }
+            }
+            else if (lettera.Length == parola.Length)
+            {
+                if (parola == lettera)
+                {
+                    for (int i = 0; i < parolaTrasf.Length; i++)
                     {
-                        if (parola1 == parola)
-                        {
-                            lblc.Text = "HAI INDOVINATO LA PAROLA";
-                            for (int i = 0; i < parolaTrasf.Length; i++)
-                            {
-                                parolaTrasf[i] = parola[i];
-                            }
-                            lblP.Text = new string(parolaTrasf);
-                            if (lblPindov.Text.Length == 0)
-                            {
-                                lblPindov.Text = parola;
-                            }
-                            else
-                            {
-                                lblPindov.Text += ", " + parola;
-                            }
-                        }
-                        else
-                        {
-                            lblc.Text = "NON HAI INDOVINATO LA PAROLA";
-                            lblv.Text = (int.Parse(lblv.Text) - 1).ToString();
-                        }
-                        label4.Visible = false;
-                        tbox1.Visible = false;
-                        btnI.Visible = false;
-                        btnCanc.Visible = false;
-                        cboxa.SelectedItem = null;
-                        label2.Visible = true;
-                        cboxa.Visible = true;
-                        btnAz.Visible = true;
+                        parolaTrasf[i] = parola[i];
                     }
-                    else if (parola1.Length > parola.Length)
-                    {
-                        lblc.Text = "LA PAROLA E' TROPPO LUNGA";
-                    }
-                    else
-                    {
-                        lblc.Text = "LA PAROLA E' TROPPO CORTA";
-                    }
-
-                    break;
-
+                }
+                else
+                {
+                    lblv.Text = (int.Parse(lblv.Text) - 1).ToString();
+                    lblc.Text = "LA PAROLA DA TE PROVATA NON E' CORRETTA";
+                }
+            }
+            else
+            {
+                lblc.Text = "IL TESTO SCRITTO DA TE NON RAPPRESENTA NE UNA LETTERA DA PROVARE NE UNA PAROLA DA PROVARE";
             }
             int vita = int.Parse(lblv.Text);
             if (!new string(parolaTrasf).Contains('_') || vita <= 0)
@@ -204,6 +175,7 @@ namespace impiccatoGrafica
                 {
                     cose.Visible = false;
                 }
+                btnChiudi.Visible = true;
                 lblc.Visible = true;
                 btnr.Visible = true;
                 if (vita <= 0)
@@ -224,6 +196,8 @@ namespace impiccatoGrafica
 
         private void btnr_Click(object sender, EventArgs e)
         {
+            btnChiudi.Visible = true;
+            btnjolly.Enabled = true;
             lblv.Text = "";
             lblm.Text = "";
             lblu.Text = "";
@@ -243,17 +217,25 @@ namespace impiccatoGrafica
                 {
                     ((ListBox)cose).ClearSelected();
                 }
-                cose.Visible = true;
-            }
 
-            btnr.Visible = false;
+            }
             lblc.Text = "";
+            foreach (Control elementi in this.Controls)
+            {
+                elementi.Visible = false;
+            }
+            label7.Visible = true;
+            label5.Visible = true;
+            lblv.Visible = true;
+            lblm.Visible = true;
+            label1.Visible = true;
+            cboxD.Visible = true;
+            btns.Visible = true;
         }
 
         private void btnjolly_Click(object sender, EventArgs e)
         {
-            if (jolly == 1)
-            {
+            
                 int pos = rdn.Next(1, parola.Length - 1);
                 bool esci = false;
                 while (esci == false)
@@ -270,17 +252,11 @@ namespace impiccatoGrafica
 
                 }
                 lblP.Text = new string(parolaTrasf);
-                jolly = 0;
-            }
-            else
-            {
-                lblc.Text = "NON HAI LETTERE JOLLY A DISPOSIZIONE";
-            }
-            btnjolly.Visible = false;
-            cboxa.SelectedItem = null;
-            label2.Visible = true;
-            cboxa.Visible = true;
-            btnAz.Visible = true;
+                btnjolly.Enabled = false;
+            
+
         }
+
+        
     }
 }
