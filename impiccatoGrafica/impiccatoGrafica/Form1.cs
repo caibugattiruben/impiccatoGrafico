@@ -108,14 +108,10 @@ namespace impiccatoGrafica
             btng.Visible = true;
 
         }
-
         private void btnCanc_Click(object sender, EventArgs e)
         {
             tbox1.Text = "";
         }
-
-
-
         private void btnI_Click(object sender, EventArgs e)
         {
             string lettera = tbox1.Text.ToString().ToLower();
@@ -126,7 +122,7 @@ namespace impiccatoGrafica
                 if (parola.Contains(lettera))
                 {
                     lblc.Text = "LA PAROLA CONTIENE LA LETTERA";
-                    for(int i = 0; i < parola.Length; i++)
+                    for (int i = 0; i < parola.Length; i++)
                     {
                         if (lettera[0] == parola[i])
                         {
@@ -140,14 +136,7 @@ namespace impiccatoGrafica
                     lblv.Text = (int.Parse(lblv.Text) - 1).ToString();
                 }
                 lblP.Text = new string(parolaTrasf);
-                if (lblu.Text.Length == 0)
-                {
-                    lblu.Text = lettera;
-                }
-                else
-                {
-                    lblu.Text += ", "+lettera;
-                }
+                lboxl.Items.Add(lettera);
             }
             else if (lettera.Length == parola.Length)
             {
@@ -175,6 +164,7 @@ namespace impiccatoGrafica
                 {
                     cose.Visible = false;
                 }
+                lboxp.Items.Add(parola);
                 btnChiudi.Visible = true;
                 lblc.Visible = true;
                 btnr.Visible = true;
@@ -188,21 +178,19 @@ namespace impiccatoGrafica
                 }
             }
         }
-
         private void btnChiudi_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void btnr_Click(object sender, EventArgs e)
         {
             btnChiudi.Visible = true;
             btnjolly.Enabled = true;
             lblv.Text = "";
             lblm.Text = "";
-            lblu.Text = "";
             lblP.Text = "";
             lblc.Text = "";
+            lboxl.Items.Clear();
             foreach (Control cose in this.Controls)
             {
                 if (cose is TextBox)
@@ -213,11 +201,6 @@ namespace impiccatoGrafica
                 {
                     ((ComboBox)cose).SelectedIndex = -1;
                 }
-                else if (cose is ListBox)
-                {
-                    ((ListBox)cose).ClearSelected();
-                }
-
             }
             lblc.Text = "";
             foreach (Control elementi in this.Controls)
@@ -231,32 +214,35 @@ namespace impiccatoGrafica
             label1.Visible = true;
             cboxD.Visible = true;
             btns.Visible = true;
+            btnChiudi.Visible = true;
         }
-
         private void btnjolly_Click(object sender, EventArgs e)
         {
-            
-                int pos = rdn.Next(1, parola.Length - 1);
-                bool esci = false;
-                while (esci == false)
-                {
-                    if (parolaTrasf[pos] == '_')
-                    {
-                        parolaTrasf[pos] = parola[pos];
-                        esci = true;
-                    }
-                    else
-                    {
-                        pos = rdn.Next(1, parola.Length - 1);
-                    }
 
+            int pos = rdn.Next(1, parola.Length - 1);
+            bool esci = false;
+            while (esci == false)
+            {
+                if (parolaTrasf[pos] == '_')
+                {
+                    parolaTrasf[pos] = parola[pos];
+                    esci = true;
                 }
-                lblP.Text = new string(parolaTrasf);
-                btnjolly.Enabled = false;
-            
+                else
+                {
+                    pos = rdn.Next(1, parola.Length - 1);
+                }
+
+            }
+            lblP.Text = new string(parolaTrasf);
+            btnjolly.Enabled = false;
+
 
         }
+        private void btnIndizio_Click(object sender, EventArgs e)
+        {
+            int monete = int.Parse(lblv.Text);
 
-        
+        }
     }
 }

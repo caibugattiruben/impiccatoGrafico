@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btnI = new Button();
             tbox1 = new TextBox();
             btng = new Button();
@@ -47,16 +48,16 @@
             btnCanc = new Button();
             lblc = new Label();
             label6 = new Label();
-            lblu = new Label();
             parolaP = new Label();
             lblINDIZI = new Label();
-            lblIndizio = new Label();
             btnr = new Button();
             label8 = new Label();
-            lblPindov = new Label();
             listBox1 = new ListBox();
             btnIndizio = new Button();
             btnjolly = new Button();
+            lboxl = new ListBox();
+            lboxp = new ListBox();
+            label2 = new Label();
             SuspendLayout();
             // 
             // btnI
@@ -92,7 +93,8 @@
             // lblP
             // 
             lblP.AutoSize = true;
-            lblP.Location = new Point(504, 349);
+            lblP.BackColor = Color.Maroon;
+            lblP.Location = new Point(483, 381);
             lblP.Name = "lblP";
             lblP.Size = new Size(0, 15);
             lblP.TabIndex = 3;
@@ -111,6 +113,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.LightCyan;
             label4.Location = new Point(455, 446);
             label4.Name = "label4";
             label4.Size = new Size(61, 15);
@@ -174,7 +177,7 @@
             // prova
             // 
             prova.AutoSize = true;
-            prova.Location = new Point(425, 349);
+            prova.Location = new Point(401, 381);
             prova.Name = "prova";
             prova.Size = new Size(54, 15);
             prova.TabIndex = 17;
@@ -224,7 +227,7 @@
             // lblc
             // 
             lblc.AutoSize = true;
-            lblc.Location = new Point(542, 404);
+            lblc.Location = new Point(455, 400);
             lblc.Name = "lblc";
             lblc.Size = new Size(0, 15);
             lblc.TabIndex = 23;
@@ -233,26 +236,17 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(887, 168);
+            label6.Location = new Point(870, 400);
             label6.Name = "label6";
             label6.Size = new Size(77, 15);
             label6.TabIndex = 24;
             label6.Text = "Lettere usate:";
             label6.Visible = false;
             // 
-            // lblu
-            // 
-            lblu.AutoSize = true;
-            lblu.Location = new Point(979, 168);
-            lblu.Name = "lblu";
-            lblu.Size = new Size(0, 15);
-            lblu.TabIndex = 25;
-            lblu.Visible = false;
-            // 
             // parolaP
             // 
             parolaP.AutoSize = true;
-            parolaP.Location = new Point(495, 177);
+            parolaP.Location = new Point(-2, -3);
             parolaP.Name = "parolaP";
             parolaP.Size = new Size(47, 15);
             parolaP.TabIndex = 26;
@@ -262,21 +256,12 @@
             // lblINDIZI
             // 
             lblINDIZI.AutoSize = true;
-            lblINDIZI.Location = new Point(804, 404);
+            lblINDIZI.Location = new Point(23, 305);
             lblINDIZI.Name = "lblINDIZI";
             lblINDIZI.Size = new Size(52, 15);
             lblINDIZI.TabIndex = 28;
             lblINDIZI.Text = "INDIZIO:";
             lblINDIZI.Visible = false;
-            // 
-            // lblIndizio
-            // 
-            lblIndizio.AutoSize = true;
-            lblIndizio.Location = new Point(511, 369);
-            lblIndizio.Name = "lblIndizio";
-            lblIndizio.Size = new Size(0, 15);
-            lblIndizio.TabIndex = 29;
-            lblIndizio.Visible = false;
             // 
             // btnr
             // 
@@ -292,28 +277,19 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(887, 211);
+            label8.Location = new Point(899, 158);
             label8.Name = "label8";
             label8.Size = new Size(102, 15);
             label8.TabIndex = 31;
             label8.Text = "Parole indovinate:";
             label8.Visible = false;
             // 
-            // lblPindov
-            // 
-            lblPindov.AutoSize = true;
-            lblPindov.Location = new Point(887, 228);
-            lblPindov.Name = "lblPindov";
-            lblPindov.Size = new Size(0, 15);
-            lblPindov.TabIndex = 32;
-            lblPindov.Visible = false;
-            // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
             listBox1.Items.AddRange(new object[] { "Prima Lettera (10 monete)", "Ultima Lettera (5 monete)", "Tema della parola (15 monete)", "Prima e ultima lettera (15 monete)", "Descrizione parola (25 monete)" });
-            listBox1.Location = new Point(862, 404);
+            listBox1.Location = new Point(81, 305);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(191, 79);
             listBox1.TabIndex = 33;
@@ -321,17 +297,18 @@
             // 
             // btnIndizio
             // 
-            btnIndizio.Location = new Point(912, 489);
+            btnIndizio.Location = new Point(122, 390);
             btnIndizio.Name = "btnIndizio";
             btnIndizio.Size = new Size(101, 34);
             btnIndizio.TabIndex = 34;
             btnIndizio.Text = "SCEGLI INDIZIO";
             btnIndizio.UseVisualStyleBackColor = true;
             btnIndizio.Visible = false;
+            btnIndizio.Click += btnIndizio_Click;
             // 
             // btnjolly
             // 
-            btnjolly.Location = new Point(862, 336);
+            btnjolly.Location = new Point(726, 356);
             btnjolly.Name = "btnjolly";
             btnjolly.Size = new Size(109, 40);
             btnjolly.TabIndex = 35;
@@ -340,22 +317,53 @@
             btnjolly.Visible = false;
             btnjolly.Click += btnjolly_Click;
             // 
+            // lboxl
+            // 
+            lboxl.FormattingEnabled = true;
+            lboxl.ItemHeight = 15;
+            lboxl.Location = new Point(953, 400);
+            lboxl.Name = "lboxl";
+            lboxl.Size = new Size(171, 94);
+            lboxl.TabIndex = 36;
+            lboxl.Visible = false;
+            // 
+            // lboxp
+            // 
+            lboxp.FormattingEnabled = true;
+            lboxp.ItemHeight = 15;
+            lboxp.Location = new Point(899, 184);
+            lboxp.Name = "lboxp";
+            lboxp.Size = new Size(201, 154);
+            lboxp.TabIndex = 37;
+            lboxp.Visible = false;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Arial Black", 39.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(388, -3);
+            label2.Name = "label2";
+            label2.Size = new Size(369, 79);
+            label2.TabIndex = 38;
+            label2.Text = "IMPICCATO";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(192, 255, 192);
+            BackColor = Color.Gainsboro;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1136, 650);
+            Controls.Add(label2);
+            Controls.Add(lboxp);
+            Controls.Add(lboxl);
             Controls.Add(btnjolly);
             Controls.Add(btnIndizio);
             Controls.Add(listBox1);
-            Controls.Add(lblPindov);
             Controls.Add(label8);
             Controls.Add(btnr);
-            Controls.Add(lblIndizio);
             Controls.Add(lblINDIZI);
             Controls.Add(parolaP);
-            Controls.Add(lblu);
             Controls.Add(label6);
             Controls.Add(lblc);
             Controls.Add(btnCanc);
@@ -401,16 +409,16 @@
         private Button btnCanc;
         private Label lblc;
         private Label label6;
-        private Label lblu;
         private Label parolaP;
         private Label lblINDIZI;
-        private Label lblIndizio;
         private Button btnr;
         private Label label7;
         private Label label8;
-        private Label lblPindov;
         private ListBox listBox1;
         private Button btnIndizio;
         private Button btnjolly;
+        private ListBox lboxl;
+        private ListBox lboxp;
+        private Label label2;
     }
 }
