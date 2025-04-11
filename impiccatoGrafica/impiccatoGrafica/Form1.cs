@@ -1,3 +1,4 @@
+using System.DirectoryServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace impiccatoGrafica
@@ -13,7 +14,8 @@ namespace impiccatoGrafica
         Random rdn = new Random();
         bool chiudere = false, indovinato = false;
         int jolly = 1;
-
+        int[] poss=new int[5];
+        string[] pathdiff = null;
         private void btng_Click(object sender, EventArgs e)
         {
 
@@ -35,7 +37,9 @@ namespace impiccatoGrafica
             int indice = 0;
             if (tema == "niente")
             {
-                parola = matrice[rdn.Next(0, matrice.GetLength(0)), rdn.Next(1, matrice.GetLength(1))];
+                int nume = rdn.Next(0, matrice.GetLength(0));
+                parola = matrice[nume, rdn.Next(1, matrice.GetLength(1))];
+                tema = matrice[nume, 0];
             }
             else
             {
@@ -68,7 +72,6 @@ namespace impiccatoGrafica
             {
                 elementi.Visible = true;
             }
-
             label1.Visible = false;
             cboxD.Visible = false;
             btns.Visible = false;
@@ -76,6 +79,11 @@ namespace impiccatoGrafica
             label3.Visible = false;
             btng.Visible = false;
             btnr.Visible = false;
+            pbox.Visible = true;   
+            for(int i = 0; i < poss.Length; i++)
+            {
+                poss[0] = 0;
+            }
 
         }
         private void btns_Click(object sender, EventArgs e)
@@ -84,22 +92,27 @@ namespace impiccatoGrafica
             switch (difficol)
             {
                 case "FACILE":
+                    pathdiff = ["Immagine0.png", "Immagine1.png", "Immagine2.png", "Immagine3.png", "Immagine4.png", "Immagine5.png", "Immagine6.png", "Immagine7.png", "Immagine8.png", "Immagine9.png"];
                     lblm.Text = "30";
                     lblv.Text = "10";
                     break;
                 case "MEDIO":
+                    pathdiff = ["Immagine0.png", "Immagine1.png", "Immagine2.png", "Immagine3.png", "Immagine4.png", "Immagine5.png"];
                     lblm.Text = "20";
                     lblv.Text = "5";
                     break;
                 case "DIFFICILE":
+                    pathdiff = ["Immagine0.png", "Immagine1.png", "Immagine2.png", "Immagine3.png"];
                     lblm.Text = "10";
                     lblv.Text = "3";
                     break;
                 case "IMPOSSIBILE":
+                    pathdiff = ["Immagine0.png", "Immagine1.png"];
                     lblm.Text = "5";
                     lblv.Text = "1";
                     break;
             }
+            pbox.Image = Image.FromFile("Immagine0.png");
             label1.Visible = false;
             cboxD.Visible = false;
             btns.Visible = false;
@@ -114,6 +127,7 @@ namespace impiccatoGrafica
         }
         private void btnI_Click(object sender, EventArgs e)
         {
+            int tentativi = 0;
             string lettera = tbox1.Text.ToString().ToLower();
             tbox1.Text = "";
             //LETTERA OK
@@ -127,13 +141,16 @@ namespace impiccatoGrafica
                         if (lettera[0] == parola[i])
                         {
                             parolaTrasf[i] = parola[i];
+                            lblm.Text = (int.Parse(lblm.Text) +5).ToString();
                         }
                     }
                 }
                 else
                 {
                     lblc.Text = "LA PAROLA NON CONTIENE LA LETTERA";
+                    tentativi++;
                     lblv.Text = (int.Parse(lblv.Text) - 1).ToString();
+                    pbox.Image = Image.FromFile(pathdiff[tentativi]);
                 }
                 lblP.Text = new string(parolaTrasf);
                 lboxl.Items.Add(lettera);
@@ -151,6 +168,8 @@ namespace impiccatoGrafica
                 {
                     lblv.Text = (int.Parse(lblv.Text) - 1).ToString();
                     lblc.Text = "LA PAROLA DA TE PROVATA NON E' CORRETTA";
+                    tentativi++;
+                    pbox.Image = Image.FromFile(pathdiff[tentativi]);
                 }
             }
             else
@@ -164,17 +183,19 @@ namespace impiccatoGrafica
                 {
                     cose.Visible = false;
                 }
-                lboxp.Items.Add(parola);
                 btnChiudi.Visible = true;
                 lblc.Visible = true;
                 btnr.Visible = true;
                 if (vita <= 0)
                 {
                     lblc.Text = "Non hai indovinato la parola!!!";
+                    pbox.Visible = false;
                 }
                 else
                 {
                     lblc.Text = "Hai indovinato la parola!!!";
+                    lboxp.Items.Add(parola);
+                    pbox.Visible = false;
                 }
             }
         }
@@ -241,8 +262,71 @@ namespace impiccatoGrafica
         }
         private void btnIndizio_Click(object sender, EventArgs e)
         {
-            int monete = int.Parse(lblv.Text);
+            int monete = int.Parse(lblm.Text);
+            string scelto=lboxI.SelectedItem.ToString();
+            switch (scelto)
+            {
+                case "Prima Lettera (10 monete)":
+                    if(monete>=10 && poss[0] != 1)
+                    {
+                        poss[0] = 1;
+                        parolaTrasf[0] = parola[0];
+                        lblm.Text = (int.Parse(lblm.Text) - 10).ToString();
+                    }
+                    else
+                    {
+                        lblInd.Text = "NON HAI ABBASTANZA MONETE OPPURE HAI GIà USATO QUESTO INDIZIO";
+                    }
+                        break;
+                case "Ultima Lettera (5 monete)":
+                    if (monete >= 5 && poss[1] != 1)
+                    {
+                        poss[1] = 1;
+                        parolaTrasf[parola.Length-1] = parola[parola.Length-1];
+                        lblm.Text = (int.Parse(lblm.Text) - 5).ToString();
+                    }
+                    else
+                    {
+                        lblInd.Text = "NON HAI ABBASTANZA MONETE OPPURE HAI GIà USATO QUESTO INDIZIO";
+                    }
+                    break;
+                case "Tema della parola (15 monete)":
+                    if (monete >= 15 && poss[2] != 1)
+                    {
+                        poss[2] = 1;
+                        lblt.Text = tema;
+                        lblm.Text = (int.Parse(lblm.Text) - 15).ToString();
+                    }
+                    else
+                    {
+                        lblInd.Text = "NON HAI ABBASTANZA MONETE OPPURE HAI GIà USATO QUESTO INDIZIO";
+                    }
+                    break;
+                case "Prima e ultima lettera (15 monete)":
+                    if (monete >= 15 && poss[3] != 1)
+                    {
+                        poss[3] = 1;
+                        parolaTrasf[0] = parola[0];
+                        parolaTrasf[parola.Length - 1] = parola[parola.Length - 1];
+                        lblm.Text = (int.Parse(lblm.Text) - 15).ToString();
+                    }
+                    else
+                    {
+                        lblInd.Text = "NON HAI ABBASTANZA MONETE OPPURE HAI GIà USATO QUESTO INDIZIO";
+                    }
+                    break;
+                case "Descrizione parola (25 monete)":
+                    if (monete >= 25 && poss[4] != 1)
+                    {
 
+                    }
+                    else
+                    {
+                        lblInd.Text = "NON HAI ABBASTANZA MONETE OPPURE HAI GIà USATO QUESTO INDIZIO";
+                    }
+                    break;
+            }
+            lblP.Text = new string(parolaTrasf);
         }
     }
 }
