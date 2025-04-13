@@ -64,6 +64,7 @@
             pbox = new PictureBox();
             label10 = new Label();
             lbldesc = new Label();
+            label11 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbox).BeginInit();
             SuspendLayout();
             // 
@@ -99,12 +100,13 @@
             // 
             // lblP
             // 
-            lblP.AutoSize = true;
-            lblP.BackColor = Color.Transparent;
-            lblP.Location = new Point(483, 381);
+            lblP.BackColor = Color.LightCyan;
+            lblP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblP.Location = new Point(483, 369);
             lblP.Name = "lblP";
-            lblP.Size = new Size(0, 15);
+            lblP.Size = new Size(165, 43);
             lblP.TabIndex = 3;
+            lblP.TextAlign = ContentAlignment.MiddleCenter;
             lblP.Visible = false;
             // 
             // label3
@@ -406,6 +408,14 @@
             lbldesc.Size = new Size(0, 15);
             lbldesc.TabIndex = 44;
             // 
+            // label11
+            // 
+            label11.AutoEllipsis = true;
+            label11.Location = new Point(12, 527);
+            label11.Name = "label11";
+            label11.Size = new Size(812, 114);
+            label11.TabIndex = 45;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -414,6 +424,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1136, 650);
+            Controls.Add(label11);
             Controls.Add(lbldesc);
             Controls.Add(label10);
             Controls.Add(pbox);
@@ -493,5 +504,6 @@
         private PictureBox pbox;
         private Label label10;
         private Label lbldesc;
+        private Label label11;
     }
 }

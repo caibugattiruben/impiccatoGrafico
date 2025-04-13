@@ -9,19 +9,19 @@ namespace impiccatoGrafica
         {
             InitializeComponent();
         }
-        string parola, tema, descrizione="";
+        string parola, tema, descrizione = "";
         char[] parolaTrasf;
         Random rdn = new Random();
         bool chiudere = false, indovinato = false;
         int jolly = 1;
-        int[] poss=new int[5];
+        int[] poss = new int[5];
         string[] pathdiff = null;
         private void btng_Click(object sender, EventArgs e)
         {
 
             string[,] matrice = new string[7, 50];
             string[,] matrice1 = new string[7, 50];
-            string path = "Nomi.txt", riga = "",pathDesc = "descrizioni.txt";
+            string path = "Nomi.txt", riga = "", pathDesc = "descrizioni.txt";
             string[] parole = new string[50];
             Random rdn = new Random();
             StreamReader sr = new StreamReader(path);
@@ -37,7 +37,7 @@ namespace impiccatoGrafica
                         matrice[i, j] = parole[j];
                     }
                 }
-                
+
             }
             parole = null;
             for (int i = 0; i < matrice.GetLength(0); i++)
@@ -49,9 +49,11 @@ namespace impiccatoGrafica
                     for (int j = 0; j < matrice.GetLength(1); j++)
                     {
                         matrice1[i, j] = parole[j];
+
+
                     }
                 }
-                
+
             }
             tema = cboxT.SelectedItem.ToString().ToLower();
             int indice = 0;
@@ -75,7 +77,7 @@ namespace impiccatoGrafica
                 parola = matrice[indice, colonna];
                 descrizione = matrice1[indice, colonna];
             }
-            
+
             parolaP.Text = parola;
             parolaTrasf = new char[parola.Length];
             for (int i = 0; i < parolaTrasf.Length; i++)
@@ -103,10 +105,10 @@ namespace impiccatoGrafica
             label3.Visible = false;
             btng.Visible = false;
             btnr.Visible = false;
-            pbox.Visible = true;   
-            for(int i = 0; i < poss.Length; i++)
+            pbox.Visible = true;
+            for (int i = 0; i < poss.Length; i++)
             {
-                poss[0] = 0;
+                poss[i] = 0;
             }
 
         }
@@ -166,7 +168,7 @@ namespace impiccatoGrafica
                         if (lettera[0] == parola[i])
                         {
                             parolaTrasf[i] = parola[i];
-                            lblm.Text = (int.Parse(lblm.Text) +5).ToString();
+                            lblm.Text = (int.Parse(lblm.Text) + 5).ToString();
                         }
                     }
                 }
@@ -289,11 +291,11 @@ namespace impiccatoGrafica
         private void btnIndizio_Click(object sender, EventArgs e)
         {
             int monete = int.Parse(lblm.Text);
-            string scelto=lboxI.SelectedItem.ToString();
+            string scelto = lboxI.SelectedItem.ToString();
             switch (scelto)
             {
                 case "Prima Lettera (10 monete)":
-                    if(monete>=10 && poss[0] != 1)
+                    if (monete >= 10 && poss[0] != 1)
                     {
                         poss[0] = 1;
                         parolaTrasf[0] = parola[0];
@@ -303,12 +305,12 @@ namespace impiccatoGrafica
                     {
                         lblInd.Text = "NON HAI ABBASTANZA MONETE OPPURE HAI GIà USATO QUESTO INDIZIO";
                     }
-                        break;
+                    break;
                 case "Ultima Lettera (5 monete)":
                     if (monete >= 5 && poss[1] != 1)
                     {
                         poss[1] = 1;
-                        parolaTrasf[parola.Length-1] = parola[parola.Length-1];
+                        parolaTrasf[parola.Length - 1] = parola[parola.Length - 1];
                         lblm.Text = (int.Parse(lblm.Text) - 5).ToString();
                     }
                     else
@@ -346,6 +348,7 @@ namespace impiccatoGrafica
                     {
                         poss[4] = 1;
                         lbldesc.Text = descrizione;
+                        lblm.Text = (int.Parse(lblm.Text) - 25).ToString();
                     }
                     else
                     {
@@ -355,5 +358,7 @@ namespace impiccatoGrafica
             }
             lblP.Text = new string(parolaTrasf);
         }
+
+       
     }
 }
