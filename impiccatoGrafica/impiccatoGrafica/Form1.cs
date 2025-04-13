@@ -9,7 +9,7 @@ namespace impiccatoGrafica
         {
             InitializeComponent();
         }
-        string parola, tema, azione;
+        string parola, tema, descrizione="";
         char[] parolaTrasf;
         Random rdn = new Random();
         bool chiudere = false, indovinato = false;
@@ -20,26 +20,48 @@ namespace impiccatoGrafica
         {
 
             string[,] matrice = new string[7, 50];
-            string path = "Nomi.txt", riga = "";
+            string[,] matrice1 = new string[7, 50];
+            string path = "Nomi.txt", riga = "",pathDesc = "descrizioni.txt";
             string[] parole = new string[50];
             Random rdn = new Random();
             StreamReader sr = new StreamReader(path);
+            StreamReader sr1 = new StreamReader(pathDesc);
             for (int i = 0; i < matrice.GetLength(0); i++)
             {
                 riga = sr.ReadLine();
-                parole = riga.Split(",");
-                for (int j = 0; j < matrice.GetLength(1); j++)
+                if (riga != null)
                 {
-                    matrice[i, j] = parole[j];
+                    parole = riga.Split(",");
+                    for (int j = 0; j < matrice.GetLength(1); j++)
+                    {
+                        matrice[i, j] = parole[j];
+                    }
                 }
+                
+            }
+            parole = null;
+            for (int i = 0; i < matrice.GetLength(0); i++)
+            {
+                riga = sr1.ReadLine();
+                if (riga != null)
+                {
+                    parole = riga.Split(",");
+                    for (int j = 0; j < matrice.GetLength(1); j++)
+                    {
+                        matrice1[i, j] = parole[j];
+                    }
+                }
+                
             }
             tema = cboxT.SelectedItem.ToString().ToLower();
             int indice = 0;
+            int colonna = rdn.Next(1, matrice.GetLength(1));
             if (tema == "niente")
             {
                 int nume = rdn.Next(0, matrice.GetLength(0));
-                parola = matrice[nume, rdn.Next(1, matrice.GetLength(1))];
+                parola = matrice[nume, colonna];
                 tema = matrice[nume, 0];
+                descrizione = matrice1[nume, colonna];
             }
             else
             {
@@ -50,8 +72,10 @@ namespace impiccatoGrafica
                         indice = i;
                     }
                 }
-                parola = matrice[indice, rdn.Next(1, matrice.GetLength(1))];
+                parola = matrice[indice, colonna];
+                descrizione = matrice1[indice, colonna];
             }
+            
             parolaP.Text = parola;
             parolaTrasf = new char[parola.Length];
             for (int i = 0; i < parolaTrasf.Length; i++)
@@ -102,7 +126,8 @@ namespace impiccatoGrafica
                     lblv.Text = "5";
                     break;
                 case "DIFFICILE":
-                    pathdiff = ["Immagine0.png", "Immagine1.png", "Immagine2.png", "Immagine3.png"];
+                    pathdiff = ["Immagine0.png", "Imma" +
+                        "ine1.png", "Immagine2.png", "Immagine3.png"];
                     lblm.Text = "10";
                     lblv.Text = "3";
                     break;
@@ -211,6 +236,7 @@ namespace impiccatoGrafica
             lblm.Text = "";
             lblP.Text = "";
             lblc.Text = "";
+            lbldesc.Text = "";
             lboxl.Items.Clear();
             foreach (Control cose in this.Controls)
             {
@@ -318,7 +344,8 @@ namespace impiccatoGrafica
                 case "Descrizione parola (25 monete)":
                     if (monete >= 25 && poss[4] != 1)
                     {
-
+                        poss[4] = 1;
+                        lbldesc.Text = descrizione;
                     }
                     else
                     {

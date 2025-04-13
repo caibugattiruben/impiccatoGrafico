@@ -62,6 +62,8 @@
             lblt = new Label();
             lblInd = new Label();
             pbox = new PictureBox();
+            label10 = new Label();
+            lbldesc = new Label();
             ((System.ComponentModel.ISupportInitialize)pbox).BeginInit();
             SuspendLayout();
             // 
@@ -110,7 +112,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(511, 258);
             label3.Name = "label3";
-            label3.Size = new Size(38, 15);
+            label3.Size = new Size(39, 15);
             label3.TabIndex = 6;
             label3.Text = "Tema:";
             label3.Visible = false;
@@ -345,7 +347,7 @@
             // label2
             // 
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Old English Text MT", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.Location = new Point(455, 9);
             label2.Name = "label2";
             label2.Size = new Size(425, 79);
@@ -357,7 +359,7 @@
             label9.AutoSize = true;
             label9.Location = new Point(22, 222);
             label9.Name = "label9";
-            label9.Size = new Size(41, 15);
+            label9.Size = new Size(42, 15);
             label9.TabIndex = 39;
             label9.Text = "TEMA:";
             // 
@@ -379,13 +381,30 @@
             // 
             // pbox
             // 
-            pbox.Location = new Point(441, 84);
+            pbox.Location = new Point(421, 91);
             pbox.Name = "pbox";
             pbox.Size = new Size(315, 266);
             pbox.SizeMode = PictureBoxSizeMode.StretchImage;
             pbox.TabIndex = 42;
             pbox.TabStop = false;
             pbox.Visible = false;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(22, 243);
+            label10.Name = "label10";
+            label10.Size = new Size(75, 15);
+            label10.TabIndex = 43;
+            label10.Text = "DESCIZIONE:";
+            // 
+            // lbldesc
+            // 
+            lbldesc.AutoSize = true;
+            lbldesc.Location = new Point(96, 243);
+            lbldesc.Name = "lbldesc";
+            lbldesc.Size = new Size(0, 15);
+            lbldesc.TabIndex = 44;
             // 
             // Form1
             // 
@@ -395,6 +414,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1136, 650);
+            Controls.Add(lbldesc);
+            Controls.Add(label10);
             Controls.Add(pbox);
             Controls.Add(lblInd);
             Controls.Add(lblt);
@@ -470,5 +491,7 @@
         private Label lblt;
         private Label lblInd;
         private PictureBox pbox;
+        private Label label10;
+        private Label lbldesc;
     }
 }
