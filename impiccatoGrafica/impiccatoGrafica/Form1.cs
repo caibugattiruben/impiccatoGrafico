@@ -9,6 +9,7 @@ namespace impiccatoGrafica
         {
             InitializeComponent();
         }
+        int tentativi = 0;
         string parola, tema, descrizione = "";
         char[] parolaTrasf;
         Random rdn = new Random();
@@ -78,7 +79,6 @@ namespace impiccatoGrafica
                 descrizione = matrice1[indice, colonna];
             }
 
-            parolaP.Text = parola;
             parolaTrasf = new char[parola.Length];
             for (int i = 0; i < parolaTrasf.Length; i++)
             {
@@ -154,7 +154,7 @@ namespace impiccatoGrafica
         }
         private void btnI_Click(object sender, EventArgs e)
         {
-            int tentativi = 0;
+           
             string lettera = tbox1.Text.ToString().ToLower();
             tbox1.Text = "";
             //LETTERA OK
@@ -175,9 +175,10 @@ namespace impiccatoGrafica
                 else
                 {
                     lblc.Text = "LA PAROLA NON CONTIENE LA LETTERA";
-                    tentativi++;
                     lblv.Text = (int.Parse(lblv.Text) - 1).ToString();
+                    tentativi++;
                     pbox.Image = Image.FromFile(pathdiff[tentativi]);
+                    
                 }
                 lblP.Text = new string(parolaTrasf);
                 lboxl.Items.Add(lettera);
@@ -215,7 +216,7 @@ namespace impiccatoGrafica
                 btnr.Visible = true;
                 if (vita <= 0)
                 {
-                    lblc.Text = "Non hai indovinato la parola!!!";
+                    lblc.Text = "Non hai indovinato la parola!!! La parola era: "+parola;
                     pbox.Visible = false;
                 }
                 else
@@ -232,6 +233,7 @@ namespace impiccatoGrafica
         }
         private void btnr_Click(object sender, EventArgs e)
         {
+            tentativi = 0;
             btnChiudi.Visible = true;
             btnjolly.Enabled = true;
             lblv.Text = "";
@@ -264,6 +266,7 @@ namespace impiccatoGrafica
             cboxD.Visible = true;
             btns.Visible = true;
             btnChiudi.Visible = true;
+           
         }
         private void btnjolly_Click(object sender, EventArgs e)
         {
@@ -357,8 +360,7 @@ namespace impiccatoGrafica
                     break;
             }
             lblP.Text = new string(parolaTrasf);
+            lboxl.ClearSelected();
         }
-
-       
     }
 }

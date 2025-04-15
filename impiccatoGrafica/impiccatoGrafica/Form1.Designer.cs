@@ -48,7 +48,6 @@
             btnCanc = new Button();
             lblc = new Label();
             label6 = new Label();
-            parolaP = new Label();
             lblINDIZI = new Label();
             btnr = new Button();
             label8 = new Label();
@@ -64,12 +63,12 @@
             pbox = new PictureBox();
             label10 = new Label();
             lbldesc = new Label();
-            label11 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbox).BeginInit();
             SuspendLayout();
             // 
             // btnI
             // 
+            btnI.Anchor = AnchorStyles.None;
             btnI.Location = new Point(522, 485);
             btnI.Name = "btnI";
             btnI.Size = new Size(75, 23);
@@ -81,6 +80,7 @@
             // 
             // tbox1
             // 
+            tbox1.Anchor = AnchorStyles.None;
             tbox1.Location = new Point(522, 446);
             tbox1.Name = "tbox1";
             tbox1.Size = new Size(100, 23);
@@ -89,6 +89,7 @@
             // 
             // btng
             // 
+            btng.Anchor = AnchorStyles.None;
             btng.Location = new Point(511, 301);
             btng.Name = "btng";
             btng.Size = new Size(126, 23);
@@ -100,8 +101,9 @@
             // 
             // lblP
             // 
+            lblP.Anchor = AnchorStyles.None;
             lblP.BackColor = Color.LightCyan;
-            lblP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblP.Font = new Font("Old English Text MT", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblP.Location = new Point(483, 369);
             lblP.Name = "lblP";
             lblP.Size = new Size(165, 43);
@@ -111,16 +113,18 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Location = new Point(511, 258);
             label3.Name = "label3";
-            label3.Size = new Size(39, 15);
+            label3.Size = new Size(38, 15);
             label3.TabIndex = 6;
             label3.Text = "Tema:";
             label3.Visible = false;
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.BackColor = Color.LightCyan;
             label4.Location = new Point(455, 446);
@@ -132,6 +136,7 @@
             // 
             // btns
             // 
+            btns.Anchor = AnchorStyles.None;
             btns.Location = new Point(511, 305);
             btns.Name = "btns";
             btns.Size = new Size(75, 23);
@@ -142,6 +147,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Location = new Point(511, 262);
             label1.Name = "label1";
@@ -151,6 +157,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Location = new Point(29, 111);
             label5.Name = "label5";
@@ -160,6 +167,7 @@
             // 
             // lblm
             // 
+            lblm.Anchor = AnchorStyles.None;
             lblm.AutoSize = true;
             lblm.Location = new Point(96, 115);
             lblm.Name = "lblm";
@@ -168,6 +176,7 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Location = new Point(29, 87);
             label7.Name = "label7";
@@ -177,6 +186,7 @@
             // 
             // lblv
             // 
+            lblv.Anchor = AnchorStyles.None;
             lblv.AutoSize = true;
             lblv.Location = new Point(104, 87);
             lblv.Name = "lblv";
@@ -185,6 +195,7 @@
             // 
             // prova
             // 
+            prova.Anchor = AnchorStyles.None;
             prova.AutoSize = true;
             prova.Location = new Point(401, 381);
             prova.Name = "prova";
@@ -195,6 +206,7 @@
             // 
             // cboxT
             // 
+            cboxT.Anchor = AnchorStyles.None;
             cboxT.FormattingEnabled = true;
             cboxT.Items.AddRange(new object[] { "Niente", "Calcio", "Verbi", "Frutta e verdura", "Animali", "Nazioni", "Lavori", "Città" });
             cboxT.Location = new Point(511, 276);
@@ -205,6 +217,7 @@
             // 
             // cboxD
             // 
+            cboxD.Anchor = AnchorStyles.None;
             cboxD.FormattingEnabled = true;
             cboxD.Items.AddRange(new object[] { "Facile", "Medio", "Difficile", "Impossibile" });
             cboxD.Location = new Point(511, 280);
@@ -214,6 +227,7 @@
             // 
             // btnChiudi
             // 
+            btnChiudi.Anchor = AnchorStyles.None;
             btnChiudi.Location = new Point(1025, 29);
             btnChiudi.Name = "btnChiudi";
             btnChiudi.Size = new Size(75, 43);
@@ -224,6 +238,7 @@
             // 
             // btnCanc
             // 
+            btnCanc.Anchor = AnchorStyles.None;
             btnCanc.Location = new Point(646, 446);
             btnCanc.Name = "btnCanc";
             btnCanc.Size = new Size(47, 40);
@@ -235,8 +250,9 @@
             // 
             // lblc
             // 
+            lblc.Anchor = AnchorStyles.None;
             lblc.AutoSize = true;
-            lblc.Location = new Point(371, 409);
+            lblc.Location = new Point(371, 422);
             lblc.Name = "lblc";
             lblc.Size = new Size(0, 15);
             lblc.TabIndex = 23;
@@ -244,6 +260,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Location = new Point(747, 446);
             label6.Name = "label6";
@@ -252,18 +269,9 @@
             label6.Text = "Lettere usate:";
             label6.Visible = false;
             // 
-            // parolaP
-            // 
-            parolaP.AutoSize = true;
-            parolaP.Location = new Point(-2, -3);
-            parolaP.Name = "parolaP";
-            parolaP.Size = new Size(47, 15);
-            parolaP.TabIndex = 26;
-            parolaP.Text = "parolaP";
-            parolaP.Visible = false;
-            // 
             // lblINDIZI
             // 
+            lblINDIZI.Anchor = AnchorStyles.None;
             lblINDIZI.AutoSize = true;
             lblINDIZI.Location = new Point(23, 305);
             lblINDIZI.Name = "lblINDIZI";
@@ -274,6 +282,7 @@
             // 
             // btnr
             // 
+            btnr.Anchor = AnchorStyles.None;
             btnr.Location = new Point(511, 280);
             btnr.Name = "btnr";
             btnr.Size = new Size(137, 58);
@@ -285,6 +294,7 @@
             // 
             // label8
             // 
+            label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.Location = new Point(899, 158);
             label8.Name = "label8";
@@ -295,6 +305,7 @@
             // 
             // lboxI
             // 
+            lboxI.Anchor = AnchorStyles.None;
             lboxI.FormattingEnabled = true;
             lboxI.ItemHeight = 15;
             lboxI.Items.AddRange(new object[] { "Prima Lettera (10 monete)", "Ultima Lettera (5 monete)", "Tema della parola (15 monete)", "Prima e ultima lettera (15 monete)", "Descrizione parola (25 monete)" });
@@ -306,6 +317,7 @@
             // 
             // btnIndizio
             // 
+            btnIndizio.Anchor = AnchorStyles.None;
             btnIndizio.Location = new Point(122, 390);
             btnIndizio.Name = "btnIndizio";
             btnIndizio.Size = new Size(101, 34);
@@ -317,7 +329,8 @@
             // 
             // btnjolly
             // 
-            btnjolly.Location = new Point(726, 356);
+            btnjolly.Anchor = AnchorStyles.None;
+            btnjolly.Location = new Point(728, 384);
             btnjolly.Name = "btnjolly";
             btnjolly.Size = new Size(109, 40);
             btnjolly.TabIndex = 35;
@@ -328,6 +341,7 @@
             // 
             // lboxl
             // 
+            lboxl.Anchor = AnchorStyles.None;
             lboxl.FormattingEnabled = true;
             lboxl.ItemHeight = 15;
             lboxl.Location = new Point(830, 446);
@@ -338,6 +352,7 @@
             // 
             // lboxp
             // 
+            lboxp.Anchor = AnchorStyles.None;
             lboxp.FormattingEnabled = true;
             lboxp.ItemHeight = 15;
             lboxp.Location = new Point(899, 184);
@@ -348,8 +363,9 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Old English Text MT", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.Location = new Point(455, 9);
             label2.Name = "label2";
             label2.Size = new Size(425, 79);
@@ -358,23 +374,29 @@
             // 
             // label9
             // 
+            label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Location = new Point(22, 222);
             label9.Name = "label9";
-            label9.Size = new Size(42, 15);
+            label9.Size = new Size(39, 21);
             label9.TabIndex = 39;
             label9.Text = "TEMA:";
+            label9.UseCompatibleTextRendering = true;
+            label9.Visible = false;
             // 
             // lblt
             // 
+            lblt.Anchor = AnchorStyles.None;
             lblt.AutoSize = true;
             lblt.Location = new Point(68, 222);
             lblt.Name = "lblt";
-            lblt.Size = new Size(0, 15);
+            lblt.Size = new Size(0, 18);
             lblt.TabIndex = 40;
+            lblt.UseCompatibleTextRendering = true;
             // 
             // lblInd
             // 
+            lblInd.Anchor = AnchorStyles.None;
             lblInd.AutoSize = true;
             lblInd.Location = new Point(20, 446);
             lblInd.Name = "lblInd";
@@ -383,6 +405,7 @@
             // 
             // pbox
             // 
+            pbox.Anchor = AnchorStyles.None;
             pbox.Location = new Point(421, 91);
             pbox.Name = "pbox";
             pbox.Size = new Size(315, 266);
@@ -393,28 +416,25 @@
             // 
             // label10
             // 
+            label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
             label10.Location = new Point(22, 243);
             label10.Name = "label10";
-            label10.Size = new Size(75, 15);
+            label10.Size = new Size(75, 21);
             label10.TabIndex = 43;
             label10.Text = "DESCIZIONE:";
+            label10.UseCompatibleTextRendering = true;
+            label10.Visible = false;
             // 
             // lbldesc
             // 
+            lbldesc.Anchor = AnchorStyles.None;
             lbldesc.AutoSize = true;
             lbldesc.Location = new Point(96, 243);
             lbldesc.Name = "lbldesc";
-            lbldesc.Size = new Size(0, 15);
+            lbldesc.Size = new Size(0, 18);
             lbldesc.TabIndex = 44;
-            // 
-            // label11
-            // 
-            label11.AutoEllipsis = true;
-            label11.Location = new Point(12, 527);
-            label11.Name = "label11";
-            label11.Size = new Size(812, 114);
-            label11.TabIndex = 45;
+            lbldesc.UseCompatibleTextRendering = true;
             // 
             // Form1
             // 
@@ -424,7 +444,6 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1136, 650);
-            Controls.Add(label11);
             Controls.Add(lbldesc);
             Controls.Add(label10);
             Controls.Add(pbox);
@@ -440,7 +459,6 @@
             Controls.Add(label8);
             Controls.Add(btnr);
             Controls.Add(lblINDIZI);
-            Controls.Add(parolaP);
             Controls.Add(label6);
             Controls.Add(lblc);
             Controls.Add(btnCanc);
@@ -487,7 +505,6 @@
         private Button btnCanc;
         private Label lblc;
         private Label label6;
-        private Label parolaP;
         private Label lblINDIZI;
         private Button btnr;
         private Label label7;
@@ -504,6 +521,5 @@
         private PictureBox pbox;
         private Label label10;
         private Label lbldesc;
-        private Label label11;
     }
 }
